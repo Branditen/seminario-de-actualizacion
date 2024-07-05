@@ -129,12 +129,12 @@ th {
 }
 
 .close {
-    color: #ff009d;
+    color: #008cff;
     float: right;
     font-size: 20px;
     font-weight: bold;
-    background-color: #f3d6d6; /* Fondo del rectángulo */
-    border: 1px solid #3f0928;    /* Borde del rectángulo */
+    background-color: #d6f2f3; /* Fondo del rectángulo */
+    border: 1px solid #093b3f;    /* Borde del rectángulo */
     border-radius: 4px;        /* Bordes redondeados */
     /*padding: 6px 6px;         /* Espaciado interno del rectángulo
     margin: -10px -10px 0 0;   Ajuste del margen para que se alinee correctamente*/
@@ -149,9 +149,9 @@ th {
 
 .close:hover,
 .close:focus {
-    color: #f3d6d6;
+    color: #d6f2f3;
     text-decoration: none;
-    background-color: #ff009d; /* Fondo del rectángulo al pasar el ratón */
+    background-color: #008cff; /* Fondo del rectángulo al pasar el ratón */
     cursor: pointer;
 }
 
