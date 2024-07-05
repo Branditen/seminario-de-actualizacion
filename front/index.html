@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css; charset=UTF-8">
+    <title>Basico</title>
+</head>
+<body>
+    <h1>Envio de datos de HTML a PHP</h1>
+    
+    <button class="button" id="agregarUsuario2Btn">Agregar Usuario PHP</button>
+    
+    <div id="popupAgregar2" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h6>Agregar usando HTML</h6>
+            <form action="../back/enviarDatos.php" method="post">
+                Nombre: <input type="text"  name="nombre" id="nombre" placeholder="Nombre">
+                <br><br>
+                Apellido: <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+                <br><br>
+                Email: <input type="email" name="email" id="email" placeholder="Email">
+                <br><br>
+                Número de celular <input type="text" name="celular" id="celular" placeholder="Celular">
+                <br><br>
+                <input type="submit" name="enviar" id = "confirmarAgregar2Btn" value="Enviar datos">
+            </form>
+        </div>
+    </div>
+    
+    <h2>Listado de Usuarios</h2>
+    <table id="tablaUsuarios">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody id="listaUsuarios">
+            <!-- Los usuarios se añadirán aquí -->
+        </tbody>
+    </table>
+    
+    <!-- Botón para mostrar el pop-up -->
+    <h2>Envio datos desde JS a PHP</h2>
+
+    <button class="button" id="agregarUsuarioBtn">Agregar Usuario</button>
+    <button class="button" id="modificarUsuarioBtn">Modificar Usuario</button>
+    <button class="button" id="eliminarUsuarioBtn">Eliminar Usuario</button>
+    
+    <!-- Pop-up de Agregar Usuario -->
+    <div id="popupAgregar" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h6>Agregar Usuario</h6>
+            <label for="nombreAgregar">Nombre:</label>
+            <input type="text" id="nombreAgregar" placeholder="Nombre"><br><br>
+            <label for="apellidoAgregar">Apellido:</label>
+            <input type="text" id="apellidoAgregar" placeholder="Apellido"><br><br>
+            <label for="emailAgregar">Email:</label>
+            <input type="text" id="emailAgregar" placeholder="Email"><br><br>
+            <label for="celularAgregar">Teléfono:</label>
+            <input type="text" id="celularAgregar" placeholder="Celular"><br><br>
+            <button id="confirmarAgregarBtn">Agregar</button>
+        </div>
+    </div>
+
+    <!-- Pop-up de Modificar Usuario -->
+    <div id="popupModificar" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h6>Modificar Usuario</h6>
+            <label for="userIdModificar">ID de Usuario:</label>
+            <input type="text" id="userIdModificar" placeholder="ID"><br><br>
+            <label for="nombreModificar">Nombre:</label>
+            <input type="text" id="nombreModificar" placeholder="Nombre"><br><br>
+            <label for="apellidoModificar">Apellido:</label>
+            <input type="text" id="apellidoModificar" placeholder="Apellido"><br><br>
+            <label for="emailModificar">Email:</label>
+            <input type="text" id="emailModificar" placeholder="Email"><br><br>
+            <label for="celularModificar">Teléfono:</label>
+            <input type="text" id="celularModificar" placeholder="Celular"><br><br>
+            <button id="confirmarModificarBtn">Modificar</button>
+        </div>
+    </div>
+    
+    <!-- Pop-up para eliminar usuario -->
+    <div id="popupEliminar" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h6>Eliminar Usuario</h6>
+            <label for="userId">ID de Usuario:</label>
+            <input type="text" id="userIdEliminar" name="userIdEliminar" placeholder="ID">
+            <button id="confirmarEliminarBtn">Eliminar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

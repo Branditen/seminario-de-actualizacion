@@ -1,0 +1,7 @@
+<FilesMatch "\.(css)$">
+    Header set Content-Type "text/css; charset=UTF-8"
+</FilesMatch>
+
+<FilesMatch "\.(js)$">
+    Header set Content-Type "application/javascript; charset=UTF-8"
+</FilesMatch>

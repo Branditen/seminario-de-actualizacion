@@ -1,0 +1,14 @@
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $email = $_POST['email'];
+    $celular = $_POST['celular'];
+
+    print ($nombre); 
+    echo "\n";
+    print ($apellido);
+    echo "\n";
+    print ($email);
+    echo "\n";
+    print ($celular);
+
+    

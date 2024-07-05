@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+h1, h2, h3, h4, h5 {
+    color: #2E7D32;          /* Color de texto verde oscuro */
+    font-family: 'Arial', sans-serif; /* Fuente de los títulos */
+    text-shadow: 1px 1px 2px #A5D6A7; /* Sombra de texto para resaltar */
+    margin-bottom: 15px;     /* Espacio inferior */
+}
+
+h1 {
+    font-size: 2em;        /* Tamaño de fuente para h1 */
+    border-bottom: 3px solid #388E3C; /* Línea inferior para h1 */
+    padding-bottom: 10px;    /* Espacio inferior para h1 */
+}
+
+h2 {
+    font-size: 1.5em;          /* Tamaño de fuente para h2 */
+    border-bottom: 2px solid #4CAF50; /* Línea inferior para h2 */
+    padding-bottom: 8px;     /* Espacio inferior para h2 */
+}
+
+h3 {
+    font-size: 1.5em;       /* Tamaño de fuente para h3 */
+    border-bottom: 1px solid #66BB6A; /* Línea inferior para h3 */
+    padding-bottom: 6px;     /* Espacio inferior para h3 */
+}
+
+h4 {
+    font-size: 1.5em;        /* Tamaño de fuente para h4 */
+}
+
+h5 {
+    font-size: 1.25em;       /* Tamaño de fuente para h5 */
+}
+
+h6 {
+    font-size: 2em;          /* Tamaño de fuente para h6 */
+    color: #ecf5ed;          /* Color de texto verde oscuro */
+    font-family: 'Arial', sans-serif; /* Fuente de los títulos */
+    text-shadow: 1px 1px 2px #19911d; /* Sombra de texto para resaltar */
+    margin-bottom: 15px;     /* Espacio inferior */
+    margin-top: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    background-color: #9cfa94;
+    text-align: left;
+}
+
+th {
+    background-color: #368648;
+}
+
+.button {
+    background-color: #3b943e; /* Color de fondo verdoso */
+    border: none;             /* Sin borde */
+    color: white;             /* Texto en blanco */
+    padding: 15px 32px;       /* Relleno */
+    text-align: center;       /* Alineación del texto */
+    text-decoration: none;    /* Sin subrayado */
+    display: inline-block;    /* Mostrar en línea */
+    font-size: 16px;          /* Tamaño de la fuente */
+    margin: 4px 2px;          /* Margen */
+    cursor: pointer;          /* Cursor de mano al pasar por encima */
+    border-radius: 12px;      /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.button:hover {
+    background-color: #337c37; /* Fondo más oscuro al pasar por encima */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #10948d;
+    background-color: rgba(56, 141, 67, 0.4);
+}
+
+.popup-content {
+    background-color: #56bb1c;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid #063606;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f3d6d6; /* Fondo del rectángulo */
+    border: 1px solid #3f0909;    /* Borde del rectángulo */
+    border-radius: 4px;        /* Bordes redondeados */
+    /*padding: 6px 6px;         /* Espaciado interno del rectángulo
+    margin: -10px -10px 0 0;   Ajuste del margen para que se alinee correctamente*/
+    width: 20px;               /* Ancho del cuadrado */
+    height: 20px;              /* Altura del cuadrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #f3d6d6;
+    text-decoration: none;
+    background-color: #ff0000; /* Fondo del rectángulo al pasar el ratón */
+    cursor: pointer;
+}

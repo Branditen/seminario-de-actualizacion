@@ -1,0 +1,27 @@
+function obtenerUsuarios() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../back/ListarUsuarios.php', true);
+
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+            console.log('Respuesta del servidor:', xhr.responseText);
+            let usuarios = JSON.parse(xhr.responseText);
+            let listaUsuarios = document.getElementById("listaUsuarios");
+            listaUsuarios.innerHTML = "";
+
+            usuarios.forEach(function(usuario) {
+                let listItem = document.createElement("li");
+                listItem.textContent = "Nombre: " + usuario.nombre + ", Apellido: " + usuario.apellido + ", Email: " + usuario.email + ", Telefono: " + usuario.celular;
+                listaUsuarios.appendChild(listItem);
+            });
+        } else {
+            console.error('Error al obtener usuarios:', xhr.statusText);
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('Error de red al intentar obtener usuarios.');
+    };
+
+    xhr.send();
+}
