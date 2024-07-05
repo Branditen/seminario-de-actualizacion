@@ -261,3 +261,17 @@ function agregarUsuario(nombre, apellido, email, celular) {
 
     xhr.send(JSON.stringify({ nombre: nombre, apellido: apellido, email: email, celular: celular }));
 }
+
+function changeTheme(theme) {
+    let stylesheet = document.getElementById('theme-stylesheet');
+    if (theme === 'green') {
+        stylesheet.href = './styles/style.css';
+    }
+    if (theme === 'blue') {
+        stylesheet.href = './styles/style-blue.css';
+    }
+    if (theme === 'violet') {
+        stylesheet.href = './styles/style-violet.css';
+    }
+    header('Content-Type: text/html');
+}

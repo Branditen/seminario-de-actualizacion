@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" type="text/css; charset=UTF-8">
+    <link rel="stylesheet" href="./styles/style.css" id="theme-stylesheet" content-type ="UTF-8">
     <title>Basico</title>
 </head>
 <body>
     <h1>Envio de datos de HTML a PHP</h1>
-    
+
     <button class="button" id="agregarUsuario2Btn">Agregar Usuario PHP</button>
     
     <div id="popupAgregar2" class="popup">
@@ -33,11 +33,11 @@
     <table id="tablaUsuarios">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Teléfono</th>
+                <th class = "title">ID</th>
+                <th class = "title">Nombre</th>
+                <th class = "title">Apellido</th>
+                <th class = "title">Email</th>
+                <th class = "title">Teléfono</th>
             </tr>
         </thead>
         <tbody id="listaUsuarios">
@@ -52,6 +52,10 @@
     <button class="button" id="modificarUsuarioBtn">Modificar Usuario</button>
     <button class="button" id="eliminarUsuarioBtn">Eliminar Usuario</button>
     
+    <button onclick="changeTheme('violet')" class="littleButton right-aligned">Paleta Violeta</button>
+    <button onclick="changeTheme('blue')" class="littleButton right-aligned">Paleta Azul</button>
+    <button onclick="changeTheme('green')" class="littleButton right-aligned">Paleta Verde</button>
+
     <!-- Pop-up de Agregar Usuario -->
     <div id="popupAgregar" class="popup">
         <div class="popup-content">
@@ -93,7 +97,7 @@
         <div class="popup-content">
             <span class="close">&times;</span>
             <h6>Eliminar Usuario</h6>
-            <label for="userId">ID de Usuario:</label>
+            <label for="userIdEliminar">ID de Usuario:</label>
             <input type="text" id="userIdEliminar" name="userIdEliminar" placeholder="ID">
             <button id="confirmarEliminarBtn">Eliminar</button>
         </div>
