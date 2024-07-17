@@ -2,8 +2,17 @@
 try {
     require_once "./conexion.php";
     
+    $sql_name = "list";
+    $query = "SELECT sql_instruccion FROM sql_table WHERE sql_name = :sql_name";
+    
+    $stmt = $objetoConexionDb->prepare($query);
+    $stmt->bindParam(':sql_name', $sql_name, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $query_content = $stmt->fetchColumn();
+
     // Consulta para obtener los datos
-    $sql = "SELECT id_usuario, nombre, apellido, email, celular FROM user";
+    $sql = $query_content;
     $stmt = $objetoConexionDb->prepare($sql);
     $stmt->execute();
 

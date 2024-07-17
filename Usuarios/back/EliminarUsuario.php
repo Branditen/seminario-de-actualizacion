@@ -6,10 +6,22 @@ try {
     $data = json_decode(file_get_contents('php://input'), true);
 
     if (isset($data['id'])) {
+        
+        $sql_name = "select";
+
+        $query = "SELECT sql_instruccion FROM sql_table WHERE sql_name = :sql_name";
+        
+        $stmt = $objetoConexionDb->prepare($query);
+        $stmt->bindParam(':sql_name', $sql_name, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $query_content = $stmt->fetchColumn();
+
+        
         $userId = $data['id'];
 
         // Comprobar si el usuario existe
-        $sql = "SELECT * FROM user WHERE id_usuario = :id";
+        $sql = $query_content;
         $stmt = $objetoConexionDb->prepare($sql);
         $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
         $stmt->execute();
@@ -17,7 +29,17 @@ try {
 
         if ($user) {
             // Eliminar el usuario
-            $sql = "DELETE FROM user WHERE id_usuario = :id";
+            $sql_name = "delete";
+
+            $query = "SELECT sql_instruccion FROM sql_table WHERE sql_name = :sql_name";
+            
+            $stmt = $objetoConexionDb->prepare($query);
+            $stmt->bindParam(':sql_name', $sql_name, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $query_content = $stmt->fetchColumn();
+            
+            $sql = $query_content;
             $stmt = $objetoConexionDb->prepare($sql);
             $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
             $stmt->execute();

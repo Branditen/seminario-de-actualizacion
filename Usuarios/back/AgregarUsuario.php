@@ -11,14 +11,20 @@ try {
         $email = $data['email'];
         $celular = $data['celular'];
 
-        // Insertar el nuevo usuario
-        $sql = "INSERT INTO user (nombre, apellido, email, celular) VALUES (:nombre, :apellido, :email, :celular)";
-        $stmt = $objetoConexionDb->prepare($sql);
-        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-        $stmt->bindParam(':apellido', $apellido, PDO::PARAM_STR);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':celular', $celular, PDO::PARAM_STR);
+        $sql_name = "insert";
+        $query = "SELECT sql_instruccion FROM sql_table WHERE sql_name = :sql_name";
+        
+        $stmt = $objetoConexionDb->prepare($query);
+        $stmt->bindParam(':sql_name', $sql_name, PDO::PARAM_STR);
         $stmt->execute();
+
+        $query_content = $stmt->fetchColumn();
+        
+        // Insertar el nuevo usuario
+        $sql = $query_content;
+        $stmt = $objetoConexionDb->prepare($sql);
+        
+        $stmt->execute([$nombre,$apellido,$email,$celular]);
 
         $objetoConexionDb = null;
         $stmt = null;

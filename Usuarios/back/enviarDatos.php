@@ -9,21 +9,30 @@
             try {
                 require_once "./conexion.php";
 
+                $sql_name = "insert";
+                $query = "SELECT sql_instruccion FROM sql_table WHERE sql_name = :sql_name";
+                
+                $stmt = $objetoConexionDb->prepare($query);
+                $stmt->bindParam(':sql_name', $sql_name, PDO::PARAM_STR);
+                $stmt->execute();
+
+                $query_content = $stmt->fetchColumn();
+                
                 //Inserta en la base de datos osoDb, en los atributos nombre, apellido, email,celular los valores que estan en las variables $nombre,$apellido, $email,$celular
                 //Preparo la base de datos para evitar inyecciones SQL
-                $consulta ="INSERT INTO user(nombre,apellido,email,celular) VALUES (?,?,?,?);";
+                $query2 = $query_content;
 
                 //Creo la variable stmt de statement
-                $stmt = $objetoConexionDb->prepare($consulta);
+                $stmt2 = $objetoConexionDb->prepare($query2);
 
                 //En esta fase agrego a la base de datos los datos que el usario ingreso por medio del forumulario HTML
-                $stmt->execute([$nombre,$apellido,$email,$celular]);
+                $stmt2->execute([$nombre,$apellido,$email,$celular]);
 
                 $objetoConexionDb = null;
                 $stmt = null;
+                $stmt2 = null;
                 
                 header("Location: ../front/index.html");
-                
                 die();
 
             } catch (PDOException $error) {
